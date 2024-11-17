@@ -9,7 +9,7 @@ x-logging:
 
 services:
   {{ secrets.bot.id }}:
-    image: twobrowin/bmstu-alumni-bot:1.3.2
+    image: twobrowin/bmstu-alumni-bot:1.5.21
     logging: *default-logging
     ports:
       - target:    5432
@@ -49,6 +49,7 @@ services:
       KEYCLOAK__REALM:      "{{ secrets.keycloak.realm }}"
       KEYCLOAK__CLIENT: "{{ secrets.keycloak.client }}"
       KEYCLOAK__SECRET: "{{ secrets.keycloak.secrets }}"
+      KEYCLOAK__VERIFY: "true"
       
       TG_TOKEN: "{{ secrets.tg_api }}"
       
